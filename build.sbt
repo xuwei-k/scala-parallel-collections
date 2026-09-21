@@ -49,10 +49,7 @@ lazy val core = projectMatrix.in(file("core"))
     Compile / doc / autoAPIMappings := true,
   )
   .jvmPlatform(matrixScalaVersions)
-  .nativePlatform(matrixScalaVersions, settings = testNativeSettings ++ Seq(
-    versionPolicyPreviousArtifacts := Nil, // TODO: not yet published
-    mimaPreviousArtifacts := Set.empty
-  ))
+  .nativePlatform(matrixScalaVersions, settings = testNativeSettings)
 
 lazy val junit = projectMatrix.in(file("junit"))
   .settings(commonSettings)
